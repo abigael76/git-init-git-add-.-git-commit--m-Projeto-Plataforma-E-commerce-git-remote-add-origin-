@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Plataforma de E-commerce Integrada</title>
+  
+<nav class='menu' style="
+background: #4facfe;
+padding: 15px;
+display: flex;
+justify-content: center;
+gap: 40px;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+">
+<a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Início</a>
+<a href="cadastro.html" style="color: white; text-decoration: none; font-weight: bold;">Cadastro</a>
+<a href="login.html" style="color: white; text-decoration: none; font-weight: bold;">Login</a>
+<a href="dashboard.html" style="color: white; text-decoration: none; font-weight: bold;">Dashboard</a>
+<a href="produtos.html" style="color: white; text-decoration: none; font-weight: bold;">Produtos</a>
+<a href="pagamento.html" style="color: white; text-decoration: none; font-weight: bold;">Pagamento</a>
+</nav>
+<div class='container'>
+</body>
+</html>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4facfe;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-container button:hover {
+      background-color: #00c6fb;
+    }
+
+    .login-container p {
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .login-container a {
+      color: #4facfe;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<head>
+  <form action="login.html" method="post">
+    <form onsubmit="return registrarUsuario()">
+
+</head>
+<head><form onsubmit="return registrarUsuario()">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="dashboard.html" method="post">
+      <input type="text" placeholder="Usuário" required />
+      <input type="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+  </div>
+
+  <script>
+    function registrarUsuario() {
+      // Aqui você pode capturar os dados se quiser salvar depois
+      const nome = document.querySelector('input[placeholder="Nome completo"]').value;
+      const usuario = document.querySelector('input[placeholder="Usuário"]').value;
+  
+      alert(`Usuário ${usuario} cadastrado com sucesso!`);
+      // Simulação: salvar no localStorage (ou backend depois)
+      // localStorage.setItem('usuario', JSON.stringify({ nome, usuario }));
+  
+      // Redireciona para a página de login ou dashboard
+      window.location.href = "login.html";
+      return false; // evita recarregar a página
+    }
+  </script>
+  </body>
+</html>

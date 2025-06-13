@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento - E-commerce</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .produtos {
+      margin-bottom: 20px;
+    }
+
+    .produtos li {
+      margin: 10px 0;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    label, select, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #4facfe;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #00c6fb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Resumo do Carrinho</h2>
+    <ul class="produtos" id="listaProdutos"></ul>
+    <div class="total" id="total"></div>
+
+    <h3>Forma de Pagamento</h3>
+    <form onsubmit="finalizarCompra(); return false;">
+      <select required>
+        <option value="kz">Selecione</option>
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="pix">PIX</option>
+        <option value="boleto">Boleto Bancário</option>
+      </select>
+      <input type="text" placeholder="Nome completo" required />
+      <input type="text" placeholder="B.I" required />
+      <button type="submit">Finalizar Compra</button>
+    </form>
+  </div>
+
+  <script>
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const lista = document.getElementById('listaProdutos');
+    const totalDiv = document.getElementById('total');
+    let total = 0;
+
+    carrinho.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nome} - kz ${item.preco.toFixed(2)}`;
+      lista.appendChild(li);
+      total += item.preco;
+    });
+
+    totalDiv.textContent = `Total: kz ${total.toFixed(2)}`;
+
+    function finalizarCompra() {
+      alert("Compra finalizada com sucesso!");
+      localStorage.removeItem('carrinho');
+      window.location.href = "produtos.html";
+    }
+  </script>
+
+</body>
+</html>
+
+<nav class='menu' style="
+  background: #4facfe;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+">
+  <a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Início</a>
+  <a href="cadastro.html" style="color: white; text-decoration: none; font-weight: bold;">Cadastro</a>
+  <a href="login.html" style="color: white; text-decoration: none; font-weight: bold;">Login</a>
+  <a href="dashboard.html" style="color: white; text-decoration: none; font-weight: bold;">Dashboard</a>
+  <a href="produtos.html" style="color: white; text-decoration: none; font-weight: bold;">Produtos</a>
+  <a href="pagamento.html" style="color: white; text-decoration: none; font-weight: bold;">Pagamento</a>
+</nav>
+<div class='container'>
+
+</form>
+<script>
+const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+const lista = document.getElementById('listaProdutos');
+const totalDiv = document.getElementById('total');
+let total = 0;
+carrinho.forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+  lista.appendChild(li);
+  total += item.preco;
+});
+totalDiv.textContent = `Total: R$ ${total.toFixed(2)}`;
+function finalizarCompra() {
+  alert("Compra finalizada!");
+  localStorage.removeItem('carrinho');
+  window.location.href = "produtos.html";
+}
+</script>
+</div>
+</body>
+</html>

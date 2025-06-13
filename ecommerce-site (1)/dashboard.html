@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - E-commerce Integrado</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+    }
+
+    header {
+      background: #4facfe;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #00c6fb;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .card {
+      display: inline-block;
+      width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      color: #333;
+    }
+
+    .card p {
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<head><form onsubmit="return registrarUsuario()">
+</head>
+<body>
+
+  <header>
+  </header>
+
+  <nav>
+    <a href="dashboard.html">Início</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="cadastro.html">Cadastrar Usuário</a>
+    <a href="login.html">Sair</a>
+  </nav>
+
+  <div class="content">
+    <div class="card">
+      <h3>Usuários</h3>
+      <p>Gerencie cadastros e permissões</p>
+    </div>
+
+    <div class="card">
+      <h3>Produtos</h3>
+      <p>Adicione, edite e remova produtos</p>
+    </div>
+
+    <div class="card">
+      <h3>Pedidos</h3>
+      <p>Acompanhe vendas e entregas</p>
+    </div>
+  </div>
+
+  <script>
+    function registrarUsuario() {
+      // Aqui você pode capturar os dados se quiser salvar depois
+      const nome = document.querySelector('input[placeholder="Nome completo"]').value;
+      const usuario = document.querySelector('input[placeholder="Usuário"]').value;
+  
+      alert(`Usuário ${usuario} cadastrado com sucesso!`);
+      // Simulação: salvar no localStorage (ou backend depois)
+      // localStorage.setItem('usuario', JSON.stringify({ nome, usuario }));
+  
+      // Redireciona para a página de login ou dashboard
+      window.location.href = "login.html";
+      return false; // evita recarregar a página
+    }
+  </script>
+  </body>
+</html>
+<body>
+
+<nav class='menu' style="
+  background: #4facfe;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+">
+  <a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Início</a>
+  <a href="cadastro.html" style="color: white; text-decoration: none; font-weight: bold;">Cadastro</a>
+  <a href="login.html" style="color: white; text-decoration: none; font-weight: bold;">Login</a>
+  <a href="dashboard.html" style="color: white; text-decoration: none; font-weight: bold;">Dashboard</a>
+  <a href="produtos.html" style="color: white; text-decoration: none; font-weight: bold;">Produtos</a>
+  <a href="pagamento.html" style="color: white; text-decoration: none; font-weight: bold;">Pagamento</a>
+</nav>
+<div class='container'>
+</body>
+</html>
